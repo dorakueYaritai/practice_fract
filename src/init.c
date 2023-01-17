@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:22:48 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/17 15:11:43 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/17 16:47:14 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	init_img(t_fractol *fractol)
 // 	const size_t	len = ft_strlen(fanc_type);
 
 // 	if (ft_strncmp(fanc_type, MANDELBROT, len) == 0)
-// 		fractol->drow_fractol = drow_mandelbrot;
+// 		fractol->draw_fractol = draw_mandelbrot;
 // 	else if (ft_strncmp(fanc_type, JULIA, len) == 0)
-// 		fractol->drow_fractol = drow_julia;
+// 		fractol->draw_fractol = draw_julia;
 // 	else
 // 		x_exit(fractol, EXIT_FAILURE);
 // }

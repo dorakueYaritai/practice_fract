@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drow.c                                             :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 18:51:22 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/17 16:38:29 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/17 16:52:22 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	put_dot_to_img(t_image *img_param, t_xy_firld firld, int color)
 	*(unsigned int *) dst = color;
 }
 
-// void	drow_mandelbrot(t_fractol *fractol)
+// void	draw_mandelbrot(t_fractol *fractol)
 // {
 // 	t_xy_firld	firld;
 
@@ -59,7 +59,7 @@ void	draw_julia(t_fractol *fractol)
 		fractol->img_data.img, 0, 0);
 }
 
-// void	drow_julia(t_fractol *fractol)
+// void	draw_julia(t_fractol *fractol)
 // {
 // 	t_xy_firld	z0;
 // 	int			color;
@@ -120,7 +120,6 @@ void	roop_x_mandelbrot(t_fractol *fractol, t_complex complex, t_complex	z0)
 //Z(0) = 0;
 //C を動かす mandelbrot
 //C = aR + bI
-//
 
 int	convert_color_RGB(int color)
 {
@@ -159,7 +158,7 @@ void	draw_mandelbrot(t_fractol *fractol)
 }
 
 
-// void	drow_mandelbrot(t_fractol *fractol)
+// void	draw_mandelbrot(t_fractol *fractol)
 // {
 // 	t_complex	complex;
 // 	t_complex	z0;

@@ -90,7 +90,7 @@ SRCS=	$(SRCDIR)/main.c\
 		$(SRCDIR)/init.c\
 		$(SRCDIR)/exit.c\
 		$(SRCDIR)/argc_check.c\
-		$(SRCDIR)/drow.c\
+		$(SRCDIR)/draw.c\
 
 OBJS = $(SRCS:%.c=%.o)
 LIBFTDIR = ./libft

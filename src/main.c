@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:00:26 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/17 16:00:11 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/17 16:47:14 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 	ft_printf("handled argv\n");
 	init(&frctl);
 	ft_printf("initted\n");
-	frctl.drow_fractol(&frctl);
-	ft_printf("drowed\n");
+	frctl.draw_fractol(&frctl);
+	ft_printf("drawed\n");
 	handle_hook(&frctl);
 	mlx_loop(frctl.mlx);
 	return (0);
@@ -45,9 +45,9 @@ void	handle_argument(t_fractol *fractol, int argc, char **argv)
 		x_exit(fractol, EXIT_FAILURE);
 	len = ft_strlen(fanc_type);
 	if (ft_strncmp(fanc_type, MANDELBROT, len) == 0)
-		fractol->drow_fractol = drow_mandelbrot;
+		fractol->draw_fractol = draw_mandelbrot;
 	else if (ft_strncmp(fanc_type, JULIA, len) == 0)
-		fractol->drow_fractol = drow_julia;
+		fractol->draw_fractol = draw_julia;
 	else
 		x_exit(fractol, EXIT_FAILURE);
 }
@@ -57,7 +57,7 @@ void	clean_init(t_fractol *fractol)
 	fractol->mlx = NULL;
 	fractol->win = NULL;
 	fractol->img_data.img = NULL;
-	fractol->drow_fractol = NULL;
+	fractol->draw_fractol = NULL;
 	fractol->julia_c.r = -0.12;
 	fractol->julia_c.i = 0.74;
 }

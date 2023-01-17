@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:11:10 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/17 15:43:26 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/17 16:47:14 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ typedef struct s_fractol{
 	void		*win;
 	t_image		img_data;
 	t_complex	julia_c;
-	void		(*drow_fractol)();
+	void		(*draw_fractol)();
 }	t_fractol;
 
 void					argc_check(t_fractol *fractol, int argc);
 void					x_exit(t_fractol *fractol, int status);
 void					init(t_fractol *fractol);
-void					drow_mandelbrot(t_fractol *fractol);
-void					drow_julia(t_fractol *fractol);
+void					draw_mandelbrot(t_fractol *fractol);
+void					draw_julia(t_fractol *fractol);
 
 # define MANDELBROT "1"
 # define JULIA "2"
