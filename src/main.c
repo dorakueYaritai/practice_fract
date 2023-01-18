@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:00:26 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/17 16:47:14 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/18 18:26:06 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	clean_init(t_fractol *fractol);
 void	handle_argument(t_fractol *fractol, int argc, char **argv);
-void	handle_hook(t_fractol *fractol);
+void	init_hook(t_fractol *fractol);
 
 int	main(int argc, char **argv)
 {
@@ -27,8 +27,9 @@ int	main(int argc, char **argv)
 	init(&frctl);
 	ft_printf("initted\n");
 	frctl.draw_fractol(&frctl);
+	printf("%p\n", frctl.cursor);
 	ft_printf("drawed\n");
-	handle_hook(&frctl);
+	init_hook(&frctl);
 	mlx_loop(frctl.mlx);
 	return (0);
 }
@@ -60,4 +61,10 @@ void	clean_init(t_fractol *fractol)
 	fractol->draw_fractol = NULL;
 	fractol->julia_c.r = -0.12;
 	fractol->julia_c.i = 0.74;
+	fractol->img_data.origin.x = WIDTH / 2;
+	fractol->img_data.origin.y = HEIGHT / 2;
+	fractol->img_data.zoom = 100;
+	fractol->img_data.max_loop_times = DEF_MAX_LOOP_TIME;
+	fractol->cursor.x = 0;
+	fractol->cursor.y = 0;
 }

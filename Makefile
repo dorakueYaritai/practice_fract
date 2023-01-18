@@ -83,7 +83,8 @@
 # RESET		=	"\033[0m"
 
 CC			:= gcc
-CFLAGS		:= -Wall -Werror -Wextra
+# CFLAGS		:= -Wall -Werror -Wextra
+CFLAGS		:= 
 SRCDIR		:= ./src
 DFLAGS		:= -MMD -MP
 SRCS=	$(SRCDIR)/main.c\
@@ -91,6 +92,10 @@ SRCS=	$(SRCDIR)/main.c\
 		$(SRCDIR)/exit.c\
 		$(SRCDIR)/argc_check.c\
 		$(SRCDIR)/draw.c\
+		$(SRCDIR)/hook_1.c\
+		$(SRCDIR)/hook_2.c\
+		$(SRCDIR)/draw_mandelbrot.c\
+		$(SRCDIR)/draw_julia.c\
 
 OBJS = $(SRCS:%.c=%.o)
 LIBFTDIR = ./libft
