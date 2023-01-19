@@ -83,19 +83,19 @@
 # RESET		=	"\033[0m"
 
 CC			:= gcc
-# CFLAGS		:= -Wall -Werror -Wextra
-CFLAGS		:= 
+CFLAGS		:= -Wall -Werror -Wextra
+# CFLAGS		:= 
 SRCDIR		:= ./src
 DFLAGS		:= -MMD -MP
 SRCS=	$(SRCDIR)/main.c\
 		$(SRCDIR)/init.c\
 		$(SRCDIR)/exit.c\
-		$(SRCDIR)/argc_check.c\
 		$(SRCDIR)/draw.c\
 		$(SRCDIR)/hook_1.c\
 		$(SRCDIR)/hook_2.c\
 		$(SRCDIR)/draw_mandelbrot.c\
 		$(SRCDIR)/draw_julia.c\
+		$(SRCDIR)/handle_argument.c\
 
 OBJS = $(SRCS:%.c=%.o)
 LIBFTDIR = ./libft
@@ -111,10 +111,10 @@ $(LIBFT):
 	cd $(LIBFTDIR) && make bonus
 
 clean:
-	rm $(OBJS)
+	rm -f $(OBJS) && cd $(LIBFTDIR) && make clean
 
-fclean:
-	make clean && rm $(NAME)
+fclean:clean
+	rm -f $(NAME) && cd $(LIBFTDIR) && make fclean
 
 re:fclean
 	make

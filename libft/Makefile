@@ -8,6 +8,8 @@ ft_isalpha.c\
 ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
+ft_isdigit_str.c\
+ft_isdicimal.c\
 ft_strlen.c\
 ft_memcpy.c\
 ft_memset.c\

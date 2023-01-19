@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:11:10 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/18 20:30:37 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/19 15:37:01 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct s_complex
 	double	i;
 }	t_complex;
 
-typedef struct s_xy_firld{
+typedef struct s_xy_field{
 	int	x;
 	int	y;
-}	t_xy_firld;
+}	t_xy_field;
 
 typedef struct s_image{
 	void			*img;
@@ -37,7 +37,7 @@ typedef struct s_image{
 	int				bits_per_pixel;
 	int				line_length;
 	int				endian;
-	t_xy_firld		origin;
+	t_xy_field		origin;
 	t_complex		comp;
 	double			zoom;
 	size_t			max_loop_times;
@@ -49,34 +49,40 @@ typedef struct s_fractol{
 	t_image		img_data;
 	t_complex	julia_c;
 	void		(*draw_fractol)();
-	t_xy_firld	cursor;
+	t_xy_field	cursor;
+	int			color_factor;
 }	t_fractol;
 
-void					argc_check(t_fractol *fractol, int argc);
-void					x_exit(t_fractol *fractol, int status);
-void					init(t_fractol *fractol);
-void					draw_mandelbrot(t_fractol *fractol);
-void					draw_julia(t_fractol *fractol);
-void					put_dot_to_img(t_image *img_param, \
-							const t_xy_firld firld, const int color);
-int						convert_color_rgb(const int times);
-t_complex				convert_map_to_complex(t_complex *c, \
-							t_xy_firld image_map, \
-							const t_xy_firld origin, const double zoom);
-int						get_times_to_diverge(t_complex c, t_complex z_pre, \
-							size_t times, t_fractol *fractol);
+/*handle_argument.c*/
+void			handle_argument(t_fractol *fractol, int argc, char **argv);
 
+/*exit.c*/
+void			x_exit(t_fractol *fractol, int status);
 
+/*init.c*/
+void			init(t_fractol *fractol);
 
-void					key_hook_julia(int keycode, t_fractol *fractol);
-void					key_hook_zoom(int keycode, t_fractol *fractol);
-void					key_hook_move(int keycode, t_fractol *fractol);
-int						destroy(t_fractol *fractol);
-int						my_mouse_hook(int botton, \
-							int x, int y, t_fractol *fractol);
-int						my_key_hook(int keycode, t_fractol *fractol);
-void					init_hook(t_fractol *fractol);
-int						my_key_hook(int keycode, t_fractol *fractol);
+/*draw fractol*/
+void			draw_mandelbrot(t_fractol *fractol);
+void			draw_julia(t_fractol *fractol);
+/*draw.c*/
+void			put_dot_to_img(t_image *img_param, \
+					const t_xy_field field, const int color);
+int				convert_color_rgb(const int times, t_fractol *fractol);
+void			convert_map_to_complex(t_complex *c, \
+					t_xy_field image_map, \
+					const t_xy_field origin, const double zoom);
+int				get_times_to_diverge(t_complex c, t_complex z_pre, \
+					size_t times, t_fractol *fractol);
+
+/*hook*/
+void			init_hook(t_fractol *fractol);
+void			key_hook_julia(int keycode, t_fractol *fractol);
+void			key_hook_zoom(int keycode, t_fractol *fractol);
+void			key_hook_move(int keycode, t_fractol *fractol);
+int				my_mouse_hook(int botton, \
+					int x, int y, t_fractol *fractol);
+void			init_hook(t_fractol *fractol);
 
 # define MANDELBROT "1"
 # define JULIA "2"
@@ -87,6 +93,9 @@ int						my_key_hook(int keycode, t_fractol *fractol);
 # define SUCSESS 0
 # define FALSE 0
 # define DEF_MAX_LOOP_TIME 50
+# define INVALID_ARG 2
+# define EXPOSE_WIDTH 1000
+# define EXPOSE_HEIGHT 1000
 
 enum {
 	ON_KEYDOWN = 2,
@@ -113,5 +122,10 @@ enum {
 	ARROW_KEY_DOWN = 65364,
 };
 
+enum {
+	ID_MANDELBROT = 1,
+	ID_JULIA,
+	ID_MAX,
+};
 
 #endif

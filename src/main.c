@@ -6,15 +6,16 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:00:26 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/18 18:26:06 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/19 15:24:26 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void	clean_init(t_fractol *fractol);
-void	handle_argument(t_fractol *fractol, int argc, char **argv);
-void	init_hook(t_fractol *fractol);
+static void	clean_init(t_fractol *fractol);
+void		handle_argument(t_fractol *fractol, int argc, char **argv);
+
+// printf("%p\n", frctl.cursor);
 
 int	main(int argc, char **argv)
 {
@@ -27,30 +28,10 @@ int	main(int argc, char **argv)
 	init(&frctl);
 	ft_printf("initted\n");
 	frctl.draw_fractol(&frctl);
-	printf("%p\n", frctl.cursor);
 	ft_printf("drawed\n");
 	init_hook(&frctl);
 	mlx_loop(frctl.mlx);
 	return (0);
-}
-
-void	handle_argument(t_fractol *fractol, int argc, char **argv)
-{
-	size_t	len;
-	char	*fanc_type;
-
-	if (argc != 2)
-		x_exit(fractol, EXIT_FAILURE);
-	fanc_type = argv[1];
-	if (fanc_type == NULL)
-		x_exit(fractol, EXIT_FAILURE);
-	len = ft_strlen(fanc_type);
-	if (ft_strncmp(fanc_type, MANDELBROT, len) == 0)
-		fractol->draw_fractol = draw_mandelbrot;
-	else if (ft_strncmp(fanc_type, JULIA, len) == 0)
-		fractol->draw_fractol = draw_julia;
-	else
-		x_exit(fractol, EXIT_FAILURE);
 }
 
 void	clean_init(t_fractol *fractol)
@@ -59,12 +40,11 @@ void	clean_init(t_fractol *fractol)
 	fractol->win = NULL;
 	fractol->img_data.img = NULL;
 	fractol->draw_fractol = NULL;
-	fractol->julia_c.r = -0.12;
-	fractol->julia_c.i = 0.74;
 	fractol->img_data.origin.x = WIDTH / 2;
 	fractol->img_data.origin.y = HEIGHT / 2;
 	fractol->img_data.zoom = 100;
 	fractol->img_data.max_loop_times = DEF_MAX_LOOP_TIME;
 	fractol->cursor.x = 0;
 	fractol->cursor.y = 0;
+	fractol->color_factor = 5;
 }
