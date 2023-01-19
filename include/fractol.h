@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:11:10 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/19 15:37:01 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/20 07:50:52 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void			key_hook_zoom(int keycode, t_fractol *fractol);
 void			key_hook_move(int keycode, t_fractol *fractol);
 int				my_mouse_hook(int botton, \
 					int x, int y, t_fractol *fractol);
-void			init_hook(t_fractol *fractol);
 
 # define MANDELBROT "1"
 # define JULIA "2"

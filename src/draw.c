@@ -6,19 +6,11 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:54:43 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/19 15:36:47 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/20 07:52:19 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
-
-// void		put_dot_to_img(t_image *img_param, 
-// 				const t_xy_field field, const int color);
-// t_complex	convert_map_to_complex(t_complex *c, 
-// 				t_xy_field image_map, 
-// 				const t_xy_field origin, const double zoom);
-// int			get_times_to_diverge(t_complex c, t_complex z_pre, 
-// 				size_t times, t_fractol *fractol);
 
 void	put_dot_to_img(t_image *img_param, \
 	const t_xy_field field, const int color)

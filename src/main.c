@@ -6,16 +6,15 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:00:26 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/19 15:24:26 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/20 07:55:17 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
 static void	clean_init(t_fractol *fractol);
-void		handle_argument(t_fractol *fractol, int argc, char **argv);
 
-// printf("%p\n", frctl.cursor);
+// ft_printf("%p\n", frctl.cursor);
 
 int	main(int argc, char **argv)
 {
