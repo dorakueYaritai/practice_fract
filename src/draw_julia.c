@@ -6,11 +6,11 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 20:31:54 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/19 15:21:18 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 15:39:09 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <fractol.h>
 
 static void	put_julia_to_image(t_fractol *fractol, t_xy_field image_map);
 
@@ -27,10 +27,10 @@ void	draw_julia(t_fractol *fractol)
 			put_julia_to_image(fractol, image_map);
 			image_map.x++;
 		}
-		mlx_put_image_to_window(fractol->mlx, fractol->win, \
-			fractol->img_data.img, 0, 0);
 		image_map.y++;
 	}
+		mlx_put_image_to_window(fractol->mlx, fractol->win, \
+			fractol->img_data.img, 0, 0);
 }
 
 static void	put_julia_to_image(t_fractol *fractol, t_xy_field image_map)

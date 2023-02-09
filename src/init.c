@@ -6,11 +6,11 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:22:48 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/20 07:54:47 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 15:41:34 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <fractol.h>
 
 static void	init_img(t_fractol *fractol);
 

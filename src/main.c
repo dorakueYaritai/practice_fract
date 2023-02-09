@@ -6,31 +6,30 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:00:26 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/20 07:55:17 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 15:41:34 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <fractol.h>
 
-static void	clean_init(t_fractol *fractol);
-
-// ft_printf("%p\n", frctl.cursor);
+void	clean_init(t_fractol *fractol);
 
 int	main(int argc, char **argv)
 {
-	t_fractol	frctl;
+	// (void)argc;
 
-	clean_init(&frctl);
+	t_fractol	fractol;
+
+	clean_init(&fractol);
 	ft_printf("cleaned\n");
-	handle_argument(&frctl, argc, argv);
+	handle_argument(&fractol, argc, argv);
 	ft_printf("handled argv\n");
-	init(&frctl);
+	init(&fractol);
 	ft_printf("initted\n");
-	frctl.draw_fractol(&frctl);
+	fractol.draw_fractol(&fractol);
 	ft_printf("drawed\n");
-	init_hook(&frctl);
-	mlx_loop(frctl.mlx);
-	return (0);
+	init_hook(&fractol);
+	mlx_loop(fractol.mlx);
 }
 
 void	clean_init(t_fractol *fractol)
@@ -45,5 +44,5 @@ void	clean_init(t_fractol *fractol)
 	fractol->img_data.max_loop_times = DEF_MAX_LOOP_TIME;
 	fractol->cursor.x = 0;
 	fractol->cursor.y = 0;
-	fractol->color_factor = 5;
+	fractol->color_factor = DEF_COLOR_FATCOR;
 }

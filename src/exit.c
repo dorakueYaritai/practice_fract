@@ -6,11 +6,11 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:36:35 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/19 14:11:06 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 15:41:34 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <fractol.h>
 
 static void	put_valid_arg(void);
 

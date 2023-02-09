@@ -9,7 +9,7 @@ ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
 ft_isdigit_str.c\
-ft_isdicimal.c\
+ft_isdouble.c\
 ft_strlen.c\
 ft_memcpy.c\
 ft_memset.c\
@@ -19,6 +19,7 @@ ft_strlcpy.c\
 ft_strlcat.c\
 ft_calloc.c\
 ft_atoi.c\
+ft_atof.c\
 ft_itoa.c\
 ft_memchr.c\
 ft_memcmp.c\

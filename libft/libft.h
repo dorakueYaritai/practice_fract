@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 10:04:29 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/19 15:18:33 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/24 13:49:53 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_isdigit_str(char *str, size_t sign_allowable);
-int				ft_isdicimal(char *str, size_t sign_allowable);
+int				ft_isdouble(char *str);
 
 size_t			ft_strlen(const char *str);
 void			*ft_memset(void *buf, int ch, size_t n);
@@ -70,6 +70,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *haystack, \
 					const char *needle, size_t len);
 int				ft_atoi(const char *str);
+double			ft_atof(char *str);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
 

@@ -6,11 +6,11 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:54:43 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/20 07:52:19 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 15:39:20 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <fractol.h>
 
 void	put_dot_to_img(t_image *img_param, \
 	const t_xy_field field, const int color)

@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:11:10 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/20 07:50:52 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/01/23 20:21:28 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,12 @@ int				my_mouse_hook(int botton, \
 # define SUCSESS 0
 # define FALSE 0
 # define DEF_MAX_LOOP_TIME 50
+# define DEF_COLOR_FATCOR 270
 # define INVALID_ARG 2
 # define EXPOSE_WIDTH 1000
 # define EXPOSE_HEIGHT 1000
+# define SAME 0
+
 
 enum {
 	ON_KEYDOWN = 2,

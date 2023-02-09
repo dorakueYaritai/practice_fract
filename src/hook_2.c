@@ -6,11 +6,11 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 10:25:50 by kakiba            #+#    #+#             */
-/*   Updated: 2023/01/20 07:45:48 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 15:41:34 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <fractol.h>
 
 void	key_hook_julia(int keycode, t_fractol *fractol)
 {
