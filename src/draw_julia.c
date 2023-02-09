@@ -6,7 +6,7 @@
 /*   By: kakiba <kotto555555@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 20:31:54 by kakiba            #+#    #+#             */
-/*   Updated: 2023/02/09 15:39:09 by kakiba           ###   ########.fr       */
+/*   Updated: 2023/02/09 17:46:58 by kakiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	draw_julia(t_fractol *fractol)
 			image_map.x++;
 		}
 		image_map.y++;
-	}
 		mlx_put_image_to_window(fractol->mlx, fractol->win, \
 			fractol->img_data.img, 0, 0);
+	}
 }
 
 static void	put_julia_to_image(t_fractol *fractol, t_xy_field image_map)
